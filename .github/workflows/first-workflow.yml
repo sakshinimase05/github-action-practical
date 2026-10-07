@@ -1,0 +1,28 @@
+name: First GitHub Actions Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Show date
+        run: date
+
+      - name: Create text file
+        run: |
+          echo "This is my GitHub Actions demo file" > demo.txt
+          cat demo.txt
+
+      - name: Run Python program
+        run: |
+          echo 'print("Hello from Python!")' > hello.py
+          python3 hello.py
